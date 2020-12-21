@@ -10,5 +10,22 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
+jar.enabled(true)
+
+task hello{
+    doLast {
+        println 'Hello'
+    }
+}
+task helloGradle(dependsOn: hello) {
+    doLast {
+        println 'grale'
+    }
+}
+
+subprojects{
+    apply plugin: 'java'
+    apply plugin: 'java-library'
 }

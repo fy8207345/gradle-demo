@@ -1,0 +1,11 @@
+group 'org.fy'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(project(":child2"))
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
